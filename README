@@ -1,11 +1,9 @@
-not really for public consumption, a bit raw....
+not really for public consumption quite yet, a bit raw....
 
 bash> mkdir cache
 OR symlink to cache used by tgraph
 
 bash> export UID_PWD=twitter_uid:password
-
-edit main.rb and change me=??? to be your id
 
 # collect info on people around you
 bash> ruby collect.rb YOUR_TWITTER_NUMERICAL_ID
