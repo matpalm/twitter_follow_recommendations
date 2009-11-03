@@ -1,0 +1,18 @@
+not really for public consumption, a bit raw....
+
+bash> mkdir cache
+OR symlink to cache used by tgraph
+
+bash> export UID_PWD=twitter_uid:password
+
+edit main.rb and change me=??? to be your id
+
+# collect info on people around you
+bash> ruby collect.rb YOUR_TWITTER_NUMERICAL_ID
+let run until bored and ctrl-c
+
+# reparse result for recommendation
+# (requires hadoop pig for aggregation, feel free to rewrite aggregate_ratings.pig, it's pretty trivial)
+bash> rm sum_sorted
+bash> pig -x local -f aggregate_ratings.pig
+bash> cat sum_sorted | ./insert_name.rb 
